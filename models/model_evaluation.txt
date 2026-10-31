@@ -1,0 +1,27 @@
+
+FOOD DELIVERY TIME PREDICTION
+-----------------------------
+
+Model: Random Forest Regressor
+
+Evaluation Metrics:
+MAE  : 3.22 minutes
+RMSE : 4.09 minutes
+R2   : 0.8107
+
+Target:
+Time_taken (min)
+
+Features:
+- distance_km
+- order_hour
+- Delivery_person_Age
+- Delivery_person_Ratings
+- Road_traffic_density
+- Weather_conditions
+- Type_of_order
+- Type_of_vehicle
+- Vehicle_condition
+- multiple_deliveries
+- Festival
+- City

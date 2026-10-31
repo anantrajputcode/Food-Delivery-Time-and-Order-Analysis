@@ -1,0 +1,23 @@
+{
+    "model_name": "Random Forest Regressor",
+    "target": "Time_taken (min)",
+    "features": [
+        "distance_km",
+        "order_hour",
+        "Delivery_person_Age",
+        "Delivery_person_Ratings",
+        "Road_traffic_density",
+        "Weather_conditions",
+        "Type_of_order",
+        "Type_of_vehicle",
+        "Vehicle_condition",
+        "multiple_deliveries",
+        "Festival",
+        "City"
+    ],
+    "evaluation_metrics": {
+        "MAE": 3.22,
+        "RMSE": 4.09,
+        "R2": 0.8107
+    }
+}
