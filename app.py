@@ -156,6 +156,18 @@ div[data-baseweb="select"] > div, .stNumberInput input {
 .step .t { font-weight:600; margin:6px 0 4px 0; font-size:14px; }
 .step .d { color: var(--muted); font-size:12.5px; line-height:1.5; }
 
+
+/* ---- footer ---- */
+.footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--line);
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+  color:#5b6a84; font-size:12.5px; }
+.footer a { color:#8b9ab3; text-decoration:none; display:inline-flex; align-items:center; gap:7px;
+  padding:5px 12px; border:1px solid var(--line); border-radius:999px; background: var(--panel);
+  transition: color .15s ease, border-color .15s ease; }
+.footer a:hover { color: var(--accent); border-color: #234060; }
+.footer a svg { width:14px; height:14px; fill: currentColor; }
+.footer b { color:#8b9ab3; font-weight:600; }
+
 @media (max-width: 768px) {
   .hero h1 { font-size: 28px; } .result .v { font-size: 46px; }
   .topbar { flex-direction:column; align-items:flex-start; gap:10px; }
@@ -737,5 +749,14 @@ def page_stack() -> None:
     "Stack": page_stack,
 }[page]()
 
-st.markdown('<div style="text-align:center;color:#5b6a84;font-size:12px;margin-top:48px;">'
-            'DeliverIQ · Estimates are not guarantees of delivery time.</div>', unsafe_allow_html=True)
+st.markdown(
+    """
+<div class="footer">
+  <span>&copy; 2026 <b>anantrajputcode</b> &middot; DeliverIQ &middot; Estimates are not guarantees of delivery time.</span>
+  <a href="https://github.com/anantrajputcode" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+    GitHub
+  </a>
+</div>""",
+    unsafe_allow_html=True,
+)

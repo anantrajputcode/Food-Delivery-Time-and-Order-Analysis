@@ -231,4 +231,4 @@ The following are ideas for future work and are **not** implemented in the curre
 
 ## Author
 
-**Anant Rajput**
+**Anant Rajput** — [@anantrajputcode](https://github.com/anantrajputcode)
