@@ -1,34 +1,24 @@
+
 import streamlit as st
-import joblib
 import pandas as pd
-import sklearn
-import sys
+import joblib
 from pathlib import Path
+
+# =========================================================
+# 1. PAGE CONFIGURATION
+# =========================================================
+
+st.set_page_config(
+    page_title="DeliverIQ | Food Delivery Analytics",
+    page_icon="🚀",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "models" / "best_delivery_model.pkl"
 DATA_PATH = BASE_DIR / "dataset" / "food_delivery.csv"
 
-st.write("Python version:", sys.version)
-st.write("Scikit-learn version:", sklearn.__version__)
-st.write("Model exists:", MODEL_PATH.exists())
-st.write("Dataset exists:", DATA_PATH.exists())
-
-if MODEL_PATH.exists():
-    st.write("Model size:", round(MODEL_PATH.stat().st_size / (1024 * 1024), 2), "MB")
-
-try:
-    model = joblib.load(MODEL_PATH)
-    st.success("Model loaded successfully!")
-except Exception as e:
-    st.error(f"Model loading error: {type(e).__name__}: {repr(e)}")
-
-try:
-    df = pd.read_csv(DATA_PATH)
-    st.success(f"Dataset loaded successfully: {df.shape}")
-except Exception as e:
-    st.error(f"Dataset loading error: {type(e).__name__}: {repr(e)}")
-    
 # =========================================================
 # 2. CUSTOM CSS
 # =========================================================
